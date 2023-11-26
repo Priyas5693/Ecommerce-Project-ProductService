@@ -1,12 +1,13 @@
 package com.example.productservice.services;
 
 import com.example.productservice.dto.GenericDTO;
-import com.example.productservice.dto.fakeStoreProductDtos;
+
+import java.util.List;
 
 public interface ProductService {
     GenericDTO getProductByID(Long id);
-    void getAllProduct();
+    List<GenericDTO> getAllProduct();
     void deleteProductByID();
-    void createProduct();
+    GenericDTO createProduct(GenericDTO genericDTO);
     void updateProductByID();
 }

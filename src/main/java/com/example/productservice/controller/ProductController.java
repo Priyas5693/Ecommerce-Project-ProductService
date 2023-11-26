@@ -6,6 +6,8 @@ import com.example.productservice.services.ProductService;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/products")
 public class ProductController {
@@ -21,15 +23,16 @@ public class ProductController {
 
      }
      @GetMapping
-     public void getAllProduct(){
-
+     public List<GenericDTO> getAllProduct(){
+     return ps.getAllProduct();
     }
     @DeleteMapping("/id")
     public void deleteProductByID(){
 
     }
-    public void createProduct(){
-
+    @PostMapping
+    public GenericDTO createProduct(@RequestBody GenericDTO genericDTO){
+        return ps.createProduct(genericDTO);
     }
     public void updateProductByID(){
 
