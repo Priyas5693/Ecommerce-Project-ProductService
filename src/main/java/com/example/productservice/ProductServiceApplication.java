@@ -145,16 +145,16 @@ public class ProductServiceApplication implements CommandLineRunner {
 //        product2.setPrice(price2);
 //        Product savedproduct2= productRepository.save(product2);
 
-
-        Optional<Category> category = categoryRepository.findById(UUID.fromString("36972903-5d6c-4e29-ba7e-45996f07eb34"));
-        if (category.isEmpty()) {
-            throw new Exception("category is null");
-        }
-        Category category1 = category.get();
-
-        List<Product> product = category1.getProducts();
-        for(Product prod:product){
-            System.out.println(prod.getTitle());
-    }
+//
+//        Optional<Category> category = categoryRepository.findById(UUID.fromString("36972903-5d6c-4e29-ba7e-45996f07eb34"));
+//        if (category.isEmpty()) {
+//            throw new Exception("category is null");
+//        }
+//        Category category1 = category.get();
+//
+//        List<Product> product = category1.getProducts();
+//        for(Product prod:product){
+//            System.out.println(prod.getTitle());
+//    }
     }
 }

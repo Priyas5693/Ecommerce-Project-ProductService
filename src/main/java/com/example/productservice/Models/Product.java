@@ -23,4 +23,6 @@ public class Product extends BaseModel{
 
     @ManyToOne(optional = false)
     private Category category;
+
+    private int inventory_count;
 }

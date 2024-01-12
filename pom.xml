@@ -58,6 +58,12 @@
             <artifactId>spring-boot</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-mysql</artifactId>
+            <version>9.22.2</version>
+        </dependency>
+
 
     </dependencies>
 
