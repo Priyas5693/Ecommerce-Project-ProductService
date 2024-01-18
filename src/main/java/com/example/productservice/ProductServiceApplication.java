@@ -18,20 +18,20 @@ import java.util.Optional;
 import java.util.UUID;
 
 @SpringBootApplication
-public class ProductServiceApplication implements CommandLineRunner {
-
-    private final com.example.productservice.repository.categoryRepository categoryRepository;
-    private final PriceRepository priceRepository;
-    private final com.example.productservice.repository.productRepository productRepository;
-
-    public ProductServiceApplication(categoryRepository categoryRepository,
-                                     PriceRepository priceRepository,
-                                     productRepository productRepository) {
-        this.categoryRepository = categoryRepository;
-        this.priceRepository = priceRepository;
-        this.productRepository = productRepository;
-    }
-
+public class ProductServiceApplication {
+//
+//    private final com.example.productservice.repository.categoryRepository categoryRepository;
+//    private final PriceRepository priceRepository;
+//    private final com.example.productservice.repository.productRepository productRepository;
+//
+//    public ProductServiceApplication(categoryRepository categoryRepository,
+//                                     PriceRepository priceRepository,
+//                                     productRepository productRepository) {
+//        this.categoryRepository = categoryRepository;
+//        this.priceRepository = priceRepository;
+//        this.productRepository = productRepository;
+//    }
+//*********************************************************************************************************************
 //    private final com.example.productservice.repository.categoryRepository categoryRepository;
 //    private final com.example.productservice.repository.productRepository productRepository;
 //    private final PriceRepository priceRepository;
@@ -52,8 +52,8 @@ public class ProductServiceApplication implements CommandLineRunner {
         SpringApplication.run(ProductServiceApplication.class, args);
     }
 
-    @Override
-    public void run(String... args) throws Exception {
+//    @Override
+//    public void run(String... args) throws Exception {
 //        Mentor mentor = new Mentor();
 //        mentor.setName("Priya");
 //        mentor.setEmail("priyas5693@hgamil.com");
@@ -65,7 +65,7 @@ public class ProductServiceApplication implements CommandLineRunner {
 //        Category savedcategory=categoryRepository.save(category);
 
 //*******************************************************************************************************************
-        // **** This is optional category ****
+    // **** This is optional category ****
 //        Optional<Category> optionalCategory=categoryRepository.findById(UUID.fromString("abdb0f33-ef2d-4776-ad7d-39cd021746bb"));
 //         // Get optional category to Category
 //        if(optionalCategory.isEmpty()){
@@ -156,5 +156,5 @@ public class ProductServiceApplication implements CommandLineRunner {
 //        for(Product prod:product){
 //            System.out.println(prod.getTitle());
 //    }
-    }
+//   }
 }

@@ -5,6 +5,7 @@ import com.example.productservice.dto.GenericDTO;
 import com.example.productservice.dto.fakeStoreProductDtos;
 import com.example.productservice.exceptions.ProductNotFoundException;
 import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.context.annotation.Primary;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -15,9 +16,9 @@ import org.springframework.web.client.RestTemplate;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service("fakeStoreProductServiceImpl")
+@Service
 public class fakeStoreProductServiceImpl implements ProductService {
-     private FakeStoreClientAdapter fakeStoreClientAdapter;
+     private final FakeStoreClientAdapter fakeStoreClientAdapter;
      fakeStoreProductServiceImpl(FakeStoreClientAdapter fakeStoreClientAdapter){
          this.fakeStoreClientAdapter=fakeStoreClientAdapter;
      }

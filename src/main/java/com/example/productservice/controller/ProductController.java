@@ -5,9 +5,11 @@ import com.example.productservice.dto.GenericDTO;
 import com.example.productservice.dto.fakeStoreProductDtos;
 import com.example.productservice.exceptions.ProductNotFoundException;
 import com.example.productservice.services.ProductService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,8 +18,12 @@ import java.util.List;
 @RequestMapping("/products")
 public class ProductController {
     //create object of service class
-    private ProductService ps;
-    ProductController(@Qualifier("fakeStoreProductServiceImpl") ProductService ps){
+
+    private final ProductService ps;
+
+    //@Autowired
+    //@Qualifier("fakeStoreProductServiceImpl")
+    ProductController(ProductService ps){
 
         this.ps=ps;
     }
