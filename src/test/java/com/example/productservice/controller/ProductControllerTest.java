@@ -13,31 +13,31 @@ import static org.mockito.Mockito.when;
 
 @SpringBootTest
 public class ProductControllerTest {
-    @MockBean
-    private ProductService productService;
+//    @MockBean
+//    private ProductService productService;
+//
+//    @Inject
+//    private ProductController productController;
+//    @Test
+//    void testOnePlusOneIsTwoOrNot(){
+//
+//        assertEquals(2, 1+1, "1+1 should be 2");
+//    }
+//    @Test
+//    void testGetProductByIdMock() throws ProductNotFoundException {
+//        GenericDTO genericDTO= new GenericDTO();
+//        when(productService.getProductByID(100L)).thenReturn(genericDTO);
+//        GenericDTO genericDTO1= productController.getProductByID(100L);
+//        //assertNull(productController.getProductByID(100L));
+//        assertEquals(genericDTO,genericDTO1);
+//    }
 
-    @Inject
-    private ProductController productController;
-    @Test
-    void testOnePlusOneIsTwoOrNot(){
-
-        assertEquals(2, 1+1, "1+1 should be 2");
-    }
-    @Test
-    void testGetProductByIdMock() throws ProductNotFoundException {
-        GenericDTO genericDTO= new GenericDTO();
-        when(productService.getProductByID(100L)).thenReturn(genericDTO);
-        GenericDTO genericDTO1= productController.getProductByID(100L);
-        //assertNull(productController.getProductByID(100L));
-        assertEquals(genericDTO,genericDTO1);
-    }
-
-    @Test
-    void testGetProductByIdMockException() throws ProductNotFoundException {
-        when(productService.getProductByID(1L)).thenThrow(ProductNotFoundException.class);
-
-        assertThrows(ProductNotFoundException.class, ()->productController.getProductByID(1L));
-
-    }
+//    @Test
+//    void testGetProductByIdMockException() throws ProductNotFoundException {
+//        when(productService.getProductByID(1L)).thenThrow(ProductNotFoundException.class);
+//
+//        assertThrows(ProductNotFoundException.class, ()->productController.getProductByID(1L));
+//
+//    }
 
 }

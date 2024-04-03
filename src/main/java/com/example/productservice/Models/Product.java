@@ -1,11 +1,16 @@
 package com.example.productservice.Models;
 
 
+import com.example.productservice.dto.GenericDTO;
 import jakarta.persistence.*;
 import jdk.jfr.Enabled;
 import lombok.*;
 import org.aspectj.weaver.bcel.BcelPerClauseAspectAdder;
 import org.hibernate.annotations.Cascade;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -13,6 +18,7 @@ import org.hibernate.annotations.Cascade;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Product extends BaseModel{
+    //private Long id;
     private String title;
     private String description;
     private String image;
@@ -25,4 +31,15 @@ public class Product extends BaseModel{
     private Category category;
 
     private int inventory_count;
+
+    //method to convert products into genericproduct dtos
+    public GenericDTO from(Product product){
+       GenericDTO genericDTO =new GenericDTO();
+        genericDTO.setTitle(product.getTitle());
+        genericDTO.setDescription(product.getDescription());
+        genericDTO.setImage(product.getImage());
+        genericDTO.setCategory(product.getCategory().getName());
+        //genericDTO.setId(product.getId());
+        return genericDTO;
+    }
 }

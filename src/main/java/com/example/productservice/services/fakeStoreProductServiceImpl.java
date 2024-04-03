@@ -4,18 +4,13 @@ import com.example.productservice.ThirdPartyClient.FakeStoreClient.FakeStoreClie
 import com.example.productservice.dto.GenericDTO;
 import com.example.productservice.dto.fakeStoreProductDtos;
 import com.example.productservice.exceptions.ProductNotFoundException;
-import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Primary;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RequestCallback;
-import org.springframework.web.client.ResponseExtractor;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Primary
 @Service
 public class fakeStoreProductServiceImpl implements ProductService {
      private final FakeStoreClientAdapter fakeStoreClientAdapter;
@@ -36,7 +31,8 @@ public class fakeStoreProductServiceImpl implements ProductService {
     }
     //exception handler are in controller
     @Override
-    public GenericDTO getProductByID(Long id) throws ProductNotFoundException {
+    public GenericDTO getProductByID(String authtoken, Long id) throws ProductNotFoundException {
+         System.out.println(authtoken);
         return convertGenericToFakeStore(fakeStoreClientAdapter.getProductByID(id));
     }
 

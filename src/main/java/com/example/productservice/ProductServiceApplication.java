@@ -1,21 +1,7 @@
 package com.example.productservice;
 
-import com.example.productservice.Models.Category;
-import com.example.productservice.Models.Price;
-import com.example.productservice.Models.Product;
-import com.example.productservice.inheritancerelations.tableperclass.Mentor;
-import com.example.productservice.inheritancerelations.tableperclass.MentorRepository;
-import com.example.productservice.repository.PriceRepository;
-import com.example.productservice.repository.categoryRepository;
-import com.example.productservice.repository.productRepository;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
 
 @SpringBootApplication
 public class ProductServiceApplication {
@@ -31,7 +17,7 @@ public class ProductServiceApplication {
 //        this.priceRepository = priceRepository;
 //        this.productRepository = productRepository;
 //    }
-//*********************************************************************************************************************
+////*********************************************************************************************************************
 //    private final com.example.productservice.repository.categoryRepository categoryRepository;
 //    private final com.example.productservice.repository.productRepository productRepository;
 //    private final PriceRepository priceRepository;
@@ -43,11 +29,11 @@ public class ProductServiceApplication {
 //        this.productRepository = productRepository;
 //        this.priceRepository = priceRepository;
 //    }
-    //private MentorRepository mentorRepository;
-
-    //ProductServiceApplication(@Qualifier("tpc_mentorRepository") MentorRepository mentorRepository){
-    //this.mentorRepository=mentorRepository;
-    //}
+//    private MentorRepository mentorRepository;
+//
+//    ProductServiceApplication(@Qualifier("tpc_mentorRepository") MentorRepository mentorRepository){
+//    this.mentorRepository=mentorRepository;
+//    }
     public static void main(String[] args) {
         SpringApplication.run(ProductServiceApplication.class, args);
     }

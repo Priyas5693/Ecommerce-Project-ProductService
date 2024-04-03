@@ -5,8 +5,10 @@ import com.example.productservice.dto.GenericDTO;
 import com.example.productservice.dto.fakeStoreProductDtos;
 import com.example.productservice.exceptions.ProductNotFoundException;
 import com.example.productservice.services.ProductService;
+import org.apache.tomcat.util.http.parser.HttpParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -28,8 +30,8 @@ public class ProductController {
         this.ps=ps;
     }
     @GetMapping("/{id}")
-     public GenericDTO getProductByID(@PathVariable("id") Long id) throws ProductNotFoundException {
-        return ps.getProductByID(id);
+     public GenericDTO getProductByID(@RequestHeader(HttpHeaders.AUTHORIZATION) String authtoken, @PathVariable("id") Long id) throws ProductNotFoundException {
+        return ps.getProductByID(authtoken, id);
 
      }
      @GetMapping

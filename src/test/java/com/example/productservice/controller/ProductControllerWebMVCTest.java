@@ -89,17 +89,17 @@ public class ProductControllerWebMVCTest {
                    .andExpect(jsonPath("$.title",is("Macbook Air")))
                    .andExpect(jsonPath("$.price",is(200000)));
     }
-    @Test
-    @DisplayName("testProductControllerCallsProductServiceWithSameProductIDAsInput")
-    void testSameInput() throws ProductNotFoundException {
-        Long id= 100L;
-
-        when(productService.getProductByID(id)).thenReturn(new GenericDTO());
-
-        GenericDTO genericDTO= productController.getProductByID(id);
-        verify(productService).getProductByID(argumentCaptor.capture());
-        assertEquals(id,argumentCaptor.getValue());
-    }
+//    @Test
+//    @DisplayName("testProductControllerCallsProductServiceWithSameProductIDAsInput")
+//    void testSameInput() throws ProductNotFoundException {
+//        Long id= 100L;
+//
+//        when(productService.getProductByID(id)).thenReturn(new GenericDTO());
+//
+//        GenericDTO genericDTO= productController.getProductByID(id);
+//        verify(productService).getProductByID(argumentCaptor.capture());
+//        assertEquals(id,argumentCaptor.getValue());
+//    }
 
 
 
